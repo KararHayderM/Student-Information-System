@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نضام معلومات الطالب</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/students.css">
+  <script>
+    // Perform instant auth guard check before DOM finishes rendering
+    const currentUser = localStorage.getItem('sis_user');
+    if (!currentUser) {
+      window.location.href = 'login.html';
+    }
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+
+    <div class="nav-user">
+      <span id="userDisplay">User</span>
+      <button class="btn-logout" id="logoutBtn">تسجيل الخروج</button>
+    </div>
+
+    <div class="brand">نضام معلومات الطالب</div>
+    
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+
+        <div class="search-box">
+        <input 
+          type="text" 
+          id="searchInput" 
+          class="form-control" 
+          placeholder="البحث عن طالب"
+        >
+      </div>
+
+      <div class="page-title">
+        <h2>معلومات طلاب الامن السيبراني</h2>
+      </div>
+    
+    </div>
+
+    <div class="card-table">
+      <table>
+        <thead>
+          <tr id="tableHeader">
+            
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr>
+            <td colspan="10" class="loading-state">Loading student records...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+  
+</body>
+</html>

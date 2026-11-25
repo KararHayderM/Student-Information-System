@@ -1,0 +1,14 @@
+
+.table-status-row td {
+    text-align: center;
+    padding: 20px;
+    font-weight: 500;
+}
+
+.table-status-row td::after {
+    content: attr(data-message);
+}
+
+.table-status-row.is-error td {
+    color: var(--danger, #dc3545);
+}
