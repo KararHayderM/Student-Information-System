@@ -5,10 +5,8 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON bodies from the frontend
 app.use(express.json());
 
-// SSMS Connection Configuration (Service account used by the app)
 const config = {
     user: 'webuser',
     password: 'webpassword123!',
